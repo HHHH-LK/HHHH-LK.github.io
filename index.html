@@ -99,6 +99,9 @@
   .proj{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow-sm);margin-top:28px;overflow:hidden;transition:box-shadow .4s,transform .4s}
   .proj:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
   .proj-head{padding:34px 38px 0}
+  .origin-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--ink-soft);background:#f1ede3;border:1px solid var(--line);border-radius:999px;padding:6px 14px;margin-bottom:16px}
+  .origin-tag .d{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+  .origin-tag b{color:var(--ink);font-weight:600}
   .proj-head .eyebrow .role{color:var(--ink-soft)}
   .proj-head .eyebrow .role.solo{color:var(--accent-d)}
   .proj h3{font-family:var(--disp);font-weight:700;font-size:clamp(27px,4vw,42px);line-height:1.04;letter-spacing:-.02em;margin-top:16px}
@@ -266,7 +269,8 @@
     <!-- ===== 01 internship ===== -->
     <article class="proj reveal">
       <div class="proj-head">
-        <div class="eyebrow">Project 01 · 实习核心 · <span class="role solo">模块负责人</span></div>
+        <div class="origin-tag"><span class="d"></span><b>实习项目</b> · 香港中文大学（深圳）· 大数据研究院</div>
+        <div class="eyebrow">Project 01 · AI / 长上下文 · <span class="role solo">模块负责人</span></div>
         <h3>长上下文推理：评测 · 压缩 · 系统集成</h3>
         <p class="oneliner">让长上下文 Agent 在生产推理中更快、更省显存——一段实习里"发现瓶颈 → 设计算法 → 端到端验证"的完整闭环。</p>
       </div>
@@ -365,7 +369,8 @@
     <!-- ===== 02 Keel ===== -->
     <article class="proj reveal">
       <div class="proj-head">
-        <div class="eyebrow">Project 02 · 个人独立项目 · <span class="role solo">独立 · 278 commits</span></div>
+        <div class="origin-tag"><span class="d"></span><b>个人独立项目</b> · 从 0 自研</div>
+        <div class="eyebrow">Project 02 · AI Agent · <span class="role solo">独立 · 278 commits</span></div>
         <h3>Keel — 长期记忆型 AI Agent</h3>
         <p class="oneliner">一个"记得住、做得完、不闯祸"的 AI 伙伴，以分层记忆、自证验证闭环、审批沙箱为三大内核。</p>
       </div>
@@ -458,6 +463,7 @@
     <!-- ===== 03 TeacherMaxAI ===== -->
     <article class="proj reveal">
       <div class="proj-head">
+        <div class="origin-tag"><span class="d"></span><b>竞赛项目</b> · 2025 中国软件杯 A7 赛题</div>
         <div class="eyebrow">Project 03 · 后端 + AI 落地 · <span class="role">~4.7 万行</span></div>
         <h3>TeacherMaxAI — AI 教学智能体平台</h3>
         <p class="oneliner">把大模型深度融入课程、考试、教案、问答的智慧校园后端，用任务图调度与增强 RAG 解决真实教学场景问题。</p>
@@ -540,6 +546,7 @@ rrfScore.merge(key, add, Double::sum);</pre>
     <!-- ===== 04 rCore ===== -->
     <article class="proj reveal">
       <div class="proj-head">
+        <div class="origin-tag"><span class="d"></span><b>课程实验</b> · 清华 rCore-Tutorial / OSCamp</div>
         <div class="eyebrow">Project 04 · 系统底层 · Rust · <span class="role">课程实验框架</span></div>
         <h3>rCore — 用 Rust 实现 OS 内核</h3>
         <p class="oneliner">清华 rCore-Tutorial / OSCamp 操作系统实验：用 Rust 从裸机一路实现到完整内核——不止会用，更动手写过。</p>
@@ -582,6 +589,7 @@ rrfScore.merge(key, add, Double::sum);</pre>
     <!-- ===== 05 mini-redis ===== -->
     <article class="proj reveal">
       <div class="proj-head">
+        <div class="origin-tag"><span class="d"></span><b>个人独立项目</b> · 从 0 自研</div>
         <div class="eyebrow">Project 05 · 系统底层 · <span class="role solo">独立 · 零依赖</span></div>
         <h3>mini-redis — 从零实现 Redis</h3>
         <p class="oneliner">纯 Python、零运行时依赖，从零造一个可用的 Redis：RESP 协议、5 种数据结构、双持久化、事务、Pub/Sub，可直接用官方 redis-cli 连接。</p>
@@ -643,6 +651,7 @@ rrfScore.merge(key, add, Double::sum);</pre>
     <!-- ===== 06 中医临床数据系统 ===== -->
     <article class="proj reveal">
       <div class="proj-head">
+        <div class="origin-tag"><span class="d"></span><b>实验室 × 校外合作项目</b></div>
         <div class="eyebrow">Project 06 · 全栈 · 医疗数据</div>
         <h3>中医临床数据统计系统</h3>
         <p class="oneliner">面向"中医药治疗艾滋病"临床研究的数据录入与统计分析系统——把分散的病例数据结构化，并做出规范、可量化的疗效统计。</p>
