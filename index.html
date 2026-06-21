@@ -216,7 +216,6 @@
     <div class="brand"><span class="dot"></span>李康 · LI KANG</div>
     <div class="navlinks">
       <a href="#work">代表作</a>
-      <a href="#more">其他项目</a>
       <a href="#closing" class="cta">联系 ↗</a>
     </div>
   </div>
@@ -247,6 +246,7 @@
     <a href="#work">03 — TeacherMaxAI</a>
     <a href="#work">04 — rCore OS 内核</a>
     <a href="#work">05 — mini-redis</a>
+    <a href="#work">06 — 中医临床数据系统</a>
   </div>
 </header>
 
@@ -640,19 +640,69 @@ rrfScore.merge(key, add, Double::sum);</pre>
       </div>
     </article>
 
-  </div>
-</section>
+    <!-- ===== 06 中医临床数据系统 ===== -->
+    <article class="proj reveal">
+      <div class="proj-head">
+        <div class="eyebrow">Project 06 · 全栈 · 医疗数据</div>
+        <h3>中医临床数据统计系统</h3>
+        <p class="oneliner">面向"中医药治疗艾滋病"临床研究的数据录入与统计分析系统——把分散的病例数据结构化，并做出规范、可量化的疗效统计。</p>
+      </div>
 
-<!-- MORE -->
-<section id="more">
-  <div class="wrap">
-    <div class="seclabel reveal"><span class="big">其他项目</span><span class="en">More / 02</span><span class="ln"></span></div>
-    <div class="grid3">
-      <div class="mini reveal"><div class="mt">Java · 分布式任务</div><h4>kay-base-shard-model</h4><p>分片任务调度模型：TaskDispatcher 按分片把业务任务分发给多个 Worker 并行处理，练习任务拆分、负载分发与并发执行。</p><div class="ms">Spring Boot · 分片 · 多线程</div></div>
-      <div class="mini reveal"><div class="mt">Java · 消息队列</div><h4>RabbitMQ 消息实践</h4><p>发布者 / 多消费者多模块工程：自定义交换机与队列绑定、多监听器分流，覆盖异步解耦与可靠投递。</p><div class="ms">Spring Boot · RabbitMQ (AMQP)</div></div>
-      <div class="mini reveal"><div class="mt">全栈 · 医疗数据</div><h4>中医临床数据系统</h4><p>面向"中医药治疗艾滋病"临床数据的录入与统计系统：Excel 模板批量导入，按年龄 / 性别 / 证型 / 疗程等维度做分布统计，含数据库 DDL 设计。</p><div class="ms">Java · MySQL · 数据统计</div></div>
-      <div class="mini reveal"><div class="mt">AI · 研究</div><h4>token_reduce</h4><p>"面向 Agent 的无限长上下文高效推理"方向的早期研究与方案整理，是后续实习压缩工作的探索起点。</p><div class="ms">研究 · 长上下文压缩</div></div>
-    </div>
+      <div class="results">
+        <div class="res"><div class="v">15+</div><div class="l">统计维度<br>年龄/证型/疗程…</div></div>
+        <div class="res"><div class="v">配对 t / χ²</div><div class="l">统计显著性检验<br>疗效是否真有效</div></div>
+        <div class="res"><div class="v ink">三分类</div><div class="l">疗效评估<br>有效/稳定/无效</div></div>
+        <div class="res"><div class="v ink">Excel</div><div class="l">模板批量导入<br>含 DDL 设计</div></div>
+      </div>
+
+      <div class="pgrid split">
+        <div class="narrative">
+          <div class="qa"><span class="lbl">问题</span><p>中医药治疗艾滋病的临床研究，病例数据分散在表格里，靠人工 Excel 做疗效统计低效、易错，也难以做规范的统计学显著性判断。</p></div>
+          <div class="qa"><span class="lbl">思路</span><p>做一个"录入 + 导入 + 统计"一体的系统：把临床指标结构化存储，按多维度自动汇总分布，并内置规范的疗效评估与统计检验。</p></div>
+          <div class="qa"><span class="lbl">我做了什么</span>
+            <ul>
+              <li><strong>数据建模与导入</strong>：设计病例信息（PatientFVR / PatientAGR）、知情同意等表结构（DDL），支持 Excel 模板<strong>批量导入</strong>。</li>
+              <li><strong>多维度统计</strong>：按年龄 / 性别 / 传播途径 / 诊断 / 证型 / 体质 / 治疗方案 / 疗程 / 疗效等 <b>15+ 维度</b>自动分布统计；追踪 CD4、病毒载量、体重、淋巴细胞等治疗前后变化。</li>
+              <li><strong>疗效评估 + 统计检验</strong>：自研疗效指数 (前−后)/前 做<strong>有效 / 稳定 / 无效</strong>三分类；实现<strong>配对样本 t 检验</strong>（t / p 值）与<strong>卡方检验</strong>，对疗效做统计显著性判断。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="visual">
+          <div class="panel dg-wrap">
+            <div class="ph"><span class="ico">▦</span> 架构 · 数据 → 统计 → 疗效判定</div>
+            <div class="pbody">
+              <svg class="dg" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+                <defs><marker id="ar6" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 z" fill="#e0502a"/></marker></defs>
+                <rect x="120" y="10" width="160" height="32" rx="8" fill="#fff" stroke="var(--line-2)"/><text x="200" y="30" fill="#17191c" font-size="11" text-anchor="middle">录入 / Excel 批量导入</text>
+                <rect x="120" y="62" width="160" height="32" rx="8" fill="#fff" stroke="var(--line-2)"/><text x="200" y="82" fill="#17191c" font-size="11" text-anchor="middle">结构化存储 · MySQL</text>
+                <rect x="120" y="114" width="160" height="32" rx="8" fill="#fff" stroke="var(--line-2)"/><text x="200" y="134" fill="#17191c" font-size="11" text-anchor="middle">多维度统计 (15+)</text>
+                <rect x="86" y="166" width="228" height="34" rx="8" fill="#fbeee9" stroke="#e0502a"/><text x="200" y="182" fill="#c2401d" font-size="11" text-anchor="middle">疗效评估 + 统计检验</text><text x="200" y="195" fill="#85827a" font-size="9" text-anchor="middle">疗效指数三分类 · 配对 t · χ²</text>
+                <rect x="135" y="210" width="130" height="24" rx="7" fill="#17191c"/><text x="200" y="226" fill="#fff" font-size="10.5" text-anchor="middle">结论 / 报表</text>
+                <g stroke="#e0502a" stroke-width="1.4" marker-end="url(#ar6)"><line x1="200" y1="42" x2="200" y2="60"/><line x1="200" y1="94" x2="200" y2="112"/><line x1="200" y1="146" x2="200" y2="164"/><line x1="200" y1="200" x2="200" y2="208"/></g>
+              </svg>
+            </div>
+          </div>
+          <div class="code-panel">
+            <div class="ph"><span class="dots"><i style="background:#e0502a"></i><i style="background:#e0a458"></i><i style="background:#79d99a"></i></span> EfficacyEvaluator.java · 疗效三分类</div>
+<pre class="code"><span class="cm">// 疗效指数 = (治疗前 − 治疗后) / 治疗前</span>
+<span class="kw">double</span> <span class="fn">calculateIndex</span>(<span class="kw">double</span> before, <span class="kw">double</span> after){
+    <span class="kw">return</span> (before - after) / before;
+}
+<span class="fn">Category</span> <span class="fn">categorize</span>(<span class="kw">double</span> index){
+    <span class="kw">if</span> (index >= <span class="nm">0.30</span>)  <span class="kw">return</span> EFFECTIVE;   <span class="cm">// ≥30% 有效</span>
+    <span class="kw">if</span> (index >= <span class="nm">-0.30</span>) <span class="kw">return</span> STABLE;      <span class="cm">// 稳定</span>
+    <span class="kw">return</span> INEFFECTIVE;                       <span class="cm">// 无效</span>
+}</pre>
+            <div class="cap">阈值可配 · 另有配对 t 检验 / 卡方做显著性判断</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pfoot">
+        <div class="stack"><span class="s">Spring Boot</span><span class="s">MyBatis</span><span class="s">MySQL</span><span class="s">Apache POI (Excel)</span><span class="s">统计：配对 t / χ²</span></div>
+      </div>
+    </article>
+
   </div>
 </section>
 
