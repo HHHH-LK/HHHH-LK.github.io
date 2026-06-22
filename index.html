@@ -221,6 +221,26 @@
     .proj-head,.results,.pgrid,.pfoot,.disclaim{padding-left:20px;padding-right:20px}
     .res{flex:1 1 44%}
   }
+  /* ---- 打印 / PDF 专用 ---- */
+  .print-only{display:none}
+  @media print{
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    @page{margin:14mm 12mm}
+    html,body{background:#fff !important}
+    body::before,body::after{display:none !important}
+    nav,.compass,.scrollcue{display:none !important}
+    .reveal,.sa{opacity:1 !important;transform:none !important;animation:none !important}
+    section{padding:30px 0 !important}
+    .hero{min-height:auto !important;padding:20px 0 30px !important}
+    .hero h1{font-size:96px !important}
+    .proj{box-shadow:none !important;border:1px solid #ccc !important;break-inside:auto}
+    .proj-head{break-after:avoid}
+    .results,.res,.qa,.panel,.code-panel,.mini,.intern,.pfoot{break-inside:avoid}
+    .pgrid.split{grid-template-columns:1fr 1fr !important}
+    .frame video{display:none !important}
+    .print-only{display:flex !important;align-items:center;justify-content:center;gap:10px;min-height:120px;background:#16181c;color:#dfe6e2;font-family:var(--mono);font-size:13px;border-radius:0 0 12px 12px}
+    a[href^="http"]::after{content:""}
+  }
 </style>
 </head>
 <body>
@@ -542,6 +562,7 @@ rrfScore.merge(key, add, Double::sum);</pre>
             <div class="frame">
               <div class="bar"><i></i><i></i><i></i><em>TeacherMaxAI — 演示</em></div>
               <video src="shots/teachmaxai-demo.mp4" controls preload="metadata" playsinline style="display:block;width:100%;height:auto;background:#000"></video>
+              <div class="print-only">▶ 演示视频请见线上作品集 · hhhh-lk.github.io</div>
             </div>
           </div>
           <div class="cap">2025 中国软件杯 A7 赛题演示 · 教学管理 + AI 助教 + 增强 RAG 问答完整流程</div>
